@@ -9,7 +9,7 @@
     <!-- lookup parent from repository -->
   </parent>
   <groupId>com.vienhuynhemc</groupId>
-  <artifactId>multipleinstances</artifactId>
+  <artifactId>multiple-instances</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>multipleinstances</name>
   <description>Multiple Instances – Learning project</description>
