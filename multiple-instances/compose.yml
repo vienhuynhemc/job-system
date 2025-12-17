@@ -1,0 +1,5 @@
+name: multiple-instances
+services:
+  backend:
+    image: "multiple-instances:0.1.0"
+    scale: 5
