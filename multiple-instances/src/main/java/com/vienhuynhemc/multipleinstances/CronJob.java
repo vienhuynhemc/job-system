@@ -4,6 +4,7 @@ package com.vienhuynhemc.multipleinstances;
 import jakarta.annotation.Nonnull;
 import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
+import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -12,11 +13,13 @@ import org.springframework.stereotype.Component;
 public class CronJob {
 
   @Scheduled(fixedRate = 1, timeUnit = TimeUnit.SECONDS)
+  @SchedulerLock(name = "Job 1")
   public void cronJob() {
     executeJob("Job 1");
   }
 
   @Scheduled(fixedRate = 1, timeUnit = TimeUnit.SECONDS)
+  @SchedulerLock(name = "Job 2")
   public void cronJob2() {
     executeJob("Job 2");
   }

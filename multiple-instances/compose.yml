@@ -4,3 +4,13 @@ services:
   backend:
     image: "multiple-instances:0.1.0"
     scale: 5
+    depends_on:
+      - "db"
+  db:
+    image: "postgres:16-alpine"
+    environment:
+      POSTGRES_DB: "shedlock"
+      POSTGRES_USER: "vien.huynh"
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
