@@ -1,0 +1,9 @@
+---
+spring:
+  application:
+    name: "multipleinstances"
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/shedlock"
+    username: "vien.huynh"
+    password: "123456"
+    driver-class-name: "org.postgresql.Driver"

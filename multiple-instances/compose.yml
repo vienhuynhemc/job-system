@@ -1,4 +1,5 @@
-name: multiple-instances
+---
+name: "multiple-instances"
 services:
   backend:
     image: "multiple-instances:0.1.0"
