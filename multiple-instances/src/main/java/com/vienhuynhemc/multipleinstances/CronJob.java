@@ -13,25 +13,25 @@ import org.springframework.stereotype.Component;
 public class CronJob {
 
   @Scheduled(fixedRate = 1, timeUnit = TimeUnit.SECONDS)
-  @SchedulerLock(name = "Job 1")
+  @SchedulerLock(name = "Send email")
   public void cronJob() {
-    executeJob("Job 1");
+    executeJob("Send email");
   }
 
   @Scheduled(fixedRate = 1, timeUnit = TimeUnit.SECONDS)
-  @SchedulerLock(name = "Job 2")
+  @SchedulerLock(name = "Analysis")
   public void cronJob2() {
-    executeJob("Job 2");
+    executeJob("Analysis");
   }
 
   public void executeJob(@Nonnull String jobName) {
     final String threadName = Thread.currentThread().getName();
-    log.info("Job starting... in [{}-{}]", jobName, threadName);
+    log.info("Job {} starting... in [{}]", jobName, threadName);
     try {
       Thread.sleep(5000);
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
-    log.info("Job completed... in [{}-{}]", jobName, threadName);
+    log.info("Job {} completed... in [{}]", jobName, threadName);
   }
 }
