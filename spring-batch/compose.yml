@@ -1,8 +1,8 @@
 ---
-name: "multiple-instances"
+name: "spring-batch"
 services:
   backend:
-    image: "multiple-instances:0.1.0"
+    image: "spring-batch:0.1.0"
     scale: 5
     depends_on:
       - "db"
